@@ -23,7 +23,7 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
   }
 
   //Accumulate squared residuals
-  for(unsigned int i=0; i < estimations.size(); ++i){
+  for(int i=0; i < estimations.size(); ++i){
       VectorXd residual = estimations[i] - ground_truth[i];
       
       //Coefficient-wise multiplication
@@ -49,7 +49,6 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
   float py = x_state(1);
   float vx = x_state(2);
   float vy = x_state(3);
-  
 
 
   //Pre-compute a set of terms to avoid repeated calculation
